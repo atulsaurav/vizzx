@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vizzx"
+version = "0.1.0"
+description = "Reusable interactive DAG visualization frontend for Python web apps"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Atul Saurav" }]
+requires-python = ">=3.10"
+keywords = ["dag", "graph", "visualization", "interactive", "dagre", "d3"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+]
+dependencies = [
+    "fastapi>=0.100",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "httpx",
+    "anyio[trio]",
+]
+
+[project.urls]
+Homepage = "https://github.com/atulsaurav/vizzx"
+Repository = "https://github.com/atulsaurav/vizzx"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vizzx*"]
+
+[tool.setuptools.package-data]
+vizzx = ["static/**/*"]
